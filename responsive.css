@@ -1,0 +1,37 @@
+@media(max-width:900px){
+
+.hero{
+
+    flex-direction:column-reverse;
+
+    text-align:center;
+
+}
+
+.left{
+
+    width:100%;
+
+}
+
+.right{
+
+    width:70%;
+
+}
+
+.left h1{
+
+    font-size:55px;
+
+}
+
+.buttons{
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+}
+
+}

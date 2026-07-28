@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Deepfake vs. Real</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&family=Roboto+Mono:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+
+    <!-- ======================================================
+                        BACKGROUND LAYERS
+    ======================================================= -->
+
+    <div class="background">
+
+        <div class="gradient"></div>
+
+        <div class="grid"></div>
+
+        <div class="glow glow-one"></div>
+
+        <div class="glow glow-two"></div>
+
+        <div class="scanlines"></div>
+
+        <div class="noise"></div>
+
+    </div>
+
+    <!-- ==========================================
+     HUD DECORATIONS
+========================================== -->
+
+<div class="hud">
+
+    <div class="corner top-left"></div>
+    <div class="corner top-right"></div>
+    <div class="corner bottom-left"></div>
+    <div class="corner bottom-right"></div>
+
+    <div class="hud-line line-top"></div>
+    <div class="hud-line line-bottom"></div>
+
+    <div class="accent accent-left"></div>
+    <div class="accent accent-right"></div>
+</div>
+    <!-- Floating Decorations -->
+
+    <div class="floating-elements">
+
+        <span class="pixel pixel1"></span>
+        <span class="pixel pixel2"></span>
+        <span class="pixel pixel3"></span>
+        <span class="pixel pixel4"></span>
+        <span class="pixel pixel5"></span>
+        <span class="pixel pixel6"></span>
+        <span class="pixel pixel7"></span>
+        <span class="pixel pixel8"></span>
+
+    </div>
+
+    <!-- ======================================================
+                        MAIN APPLICATION
+    ======================================================= -->
+
+    <main id="app">
+
+        
+
+        <!-- ============================================= -->
+        <!-- LANDING PAGE -->
+        <!-- ============================================= -->
+
+        <section id="landing-page" class="screen active-screen">
+
+            <div class="hero">
+
+                <!-- LEFT CONTENT -->
+
+                <div class="hero-content">
+
+                    <div class="title-container">
+
+                        <h1 class="game-title glitch">
+
+                                    <span>Deepfake</span>
+                                    <span class="vs">vs.</span>
+                                    <span>Real</span>
+
+                        </h1>
+
+                    </div>
+
+                    <p class="subtitle">
+
+                        Can you still trust what you see?
+
+                    </p>
+
+                    <div class="button-group">
+
+                        <button id="startBtn" class="menu-btn primary">
+
+                            START INVESTIGATION
+
+                        </button>
+
+                        <button id="aboutBtn" class="menu-btn secondary">
+
+                            ABOUT
+
+                        </button>
+
+                        <button id="howBtn" class="menu-btn secondary">
+
+                            HOW TO PLAY
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <!-- RIGHT CONTENT -->
+
+                <div class="hero-image">
+
+                    <img
+                        src="assets/images/landing_page_robot_.png"
+                        alt="AI Investigator">
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+         <!-- ============================================= -->
+    <!-- LOGIN PAGE// ENTER CODENAME -->
+        <!-- ============================================= -->
+        
+        <section id="login-page" class="screen">
+
+    <div class="login-card">
+
+        <h1>AI DETECTION TERMINAL</h1>
+
+        <p>
+
+            Welcome, Investigator.
+
+        </p>
+
+        <p>
+
+            Before accessing Mission Control,
+            please register your codename.
+
+        </p>
+
+        <input
+            id="codenameInput"
+            type="text"
+            maxlength="15"
+            placeholder="Enter Investigator Codename">
+
+        <button
+            id="beginBtn"
+            class="menu-btn primary">
+
+            START INVESTIGATION
+
+        </button>
+
+    </div>
+
+</section>
+
+ <!-- ============================================= -->
+        <!-- LOADING -->
+        <!-- ============================================= -->
+
+<section id="loading-page" class="screen">
+
+    <div class="loading-terminal">
+
+        <h1>AI DETECTION TERMINAL</h1>
+
+        <div class="terminal-output">
+
+            <p id="line1"></p>
+
+            <p id="line2"></p>
+
+            <p id="line3"></p>
+
+            <p id="line4"></p>
+
+            <p id="line5"></p>
+
+            <p id="line6"></p>
+            <p id="line7"></p>
+
+        </div>
+
+      <div class="loading-status">
+
+    <div class="loading-info">
+
+        <span>System Progress</span>
+
+        <span id="loadingPercent">0%</span>
+
+    </div>
+
+    <div class="loading-bar">
+
+        <div id="loadingProgress"></div>
+
+    </div>
+
+</div>
+
+<p id="accessGranted" class="access-granted">
+
+    ✓ ACCESS GRANTED
+
+</p>
+
+    </div>
+
+</section>
+
+
+        <!-- ============================================= -->
+        <!-- ABOUT PAGE -->
+        <!-- ============================================= -->
+
+        <section id="about-page" class="screen">
+
+            <div class="page-card">
+
+                <h2>About the Project</h2>
+
+                <p>
+
+                    This educational multimedia application aims to improve
+                    users' ability to identify AI-generated and manipulated
+                    videos through an engaging gamified learning experience.
+
+                </p>
+
+                <button class="menu-btn backBtn">
+
+                    BACK
+
+                </button>
+
+            </div>
+
+        </section>
+
+        <!-- ============================================= -->
+        <!-- HOW TO PLAY -->
+        <!-- ============================================= -->
+
+        <section id="how-page" class="screen">
+
+            <div class="page-card">
+
+                <h2>How to Play</h2>
+
+                <ul>
+
+                    <li>Watch the evidence carefully.</li>
+
+                    <li>Inspect every clue.</li>
+
+                    <li>Determine whether the video is REAL or FAKE.</li>
+
+                    <li>Earn Investigation Points.</li>
+
+                    <li>Unlock badges and certificates.</li>
+
+                </ul>
+
+                <button class="menu-btn backBtn">
+
+                    BACK
+
+                </button>
+
+            </div>
+
+        </section>
+
+        <!-- ============================================= -->
+        <!-- DASHBOARD -->
+        <!-- ============================================= -->
+
+      <section id="dashboard-page" class="screen">
+
+    <div class="dashboard">
+
+        <div class="dashboard-header">
+
+            <p class="welcome-text">
+                WELCOME,
+            </p>
+
+            <h1 id="playerName">
+                AGENT GUEST
+            </h1>
+
+            <p id="playerRank" class="player-rank">
+    Rookie Investigator
+</p>
+
+            <h3 class="progress-title">
+                MISSION PROGRESS
+            </h3>
+
+            <div class="xp-bar">
+                <div id="xpFill"></div>
+            </div>
+
+            <p id="xpText"></p>
+
+            <p id="playerBadge"></p>
+
+            <div id="case01Status"></div>
+
+        </div>
+
+        <div class="dashboard-grid">
+
+            <div class="missions-panel">
+
+                <h2>ACTIVE MISSIONS</h2>
+
+                <button id="case1Btn" class="mission-card">
+
+                    <h3>CASE FILE 01</h3>
+
+                    <p>Operation: The Candidate Speech</p>
+
+                    <p>Difficulty: Easy</p>
+
+                    <span>+50 XP</span>
+
+                </button>
+
+                <div class="mission-card locked">
+
+                    <h3>CASE FILE 02</h3>
+
+                    <p>🔒 Locked</p>
+
+                </div>
+
+                <div class="mission-card locked">
+
+                    <h3>CASE FILE 03</h3>
+
+                    <p>🔒 Locked</p>
+
+                </div>
+
+            </div>
+
+            <div class="systems-panel">
+
+                <h2>SYSTEMS</h2>
+
+                <button class="system-btn">👤 Profile</button>
+
+                <button class="system-btn">🏆 Leaderboard</button>
+
+                <button class="system-btn">🎖 Badges</button>
+
+                <button class="system-btn">📜 Certificate</button>
+
+                <button class="system-btn">🎓 Final Assessment</button>
+
+                <button class="system-btn backBtn">
+                    🏠 Home
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+    <section id="case-briefing-page" class="screen">
+
+    <div class="briefing-card">
+
+        <span class="difficulty easy">EASY</span>
+
+        <h1>CASE FILE 01</h1>
+
+        <h2>Operation: The Candidate Speech</h2>
+
+        <p class="briefing-description">
+
+            A campaign speech has gone viral online.
+            Several users suspect that the speaker's face and
+            voice may have been manipulated using AI.
+
+            Your task is to examine the evidence carefully
+            before making a final verdict.
+
+        </p>
+
+        <div class="learning-objectives">
+
+            <h3>Learning Objectives</h3>
+
+            <ul>
+
+                <li>✔ Observe facial inconsistencies</li>
+
+                <li>✔ Check lip synchronization</li>
+
+                <li>✔ Examine lighting and shadows</li>
+
+                <li>✔ Look for unnatural movements</li>
+
+            </ul>
+
+        </div>
+
+        <div class="reward-box">
+
+            <h3>Mission Rewards</h3>
+
+            <p>🎖️ +50 XP</p>
+
+            <p>Truth Seeker Badge Progress</p>
+
+        </div>
+
+        <div class="briefing-buttons">
+
+            <button id="startCaseBtn" class="menu-btn primary">
+
+                START INVESTIGATION
+
+            </button>
+
+            <button class="menu-btn secondary backDashboardBtn">
+
+                BACK
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+        <!-- INVESTIGATION PAGE -->
+
+<section id="investigation-page" class="screen">
+
+    <div class="investigation-container"> 
+
+        <div class="investigation-header">
+
+            <h1>CASE FILE 01</h1>
+
+            <div class="timer">
+
+                02:00
+
+            </div>
+
+        </div>
+
+        <div class="investigation-body">
+
+            <div class="video-panel">
+
+                <video id="caseVideo" controls>
+
+                    <source src="assets/videos/case1.mp4" type="video/mp4">
+
+                </video>
+
+            </div>
+
+            <div class="notes-panel">
+
+                <h2>Investigation Notes</h2>
+
+                <label><input type="checkbox"> Facial inconsistencies</label>
+
+                <label><input type="checkbox"> Lip synchronization</label>
+
+                <label><input type="checkbox"> Eye blinking</label>
+
+                <label><input type="checkbox"> Lighting & shadows</label>
+
+                <label><input type="checkbox"> Unnatural movements</label>
+
+                <textarea
+                    placeholder="Write your observations..."></textarea>
+
+            </div>
+
+        </div>
+
+        <div class="decision-panel">
+
+            <h2>Final Verdict</h2>
+
+            <button id="realBtn" class="verdict-btn">
+
+                REAL
+
+            </button>
+
+            <button id="fakeBtn" class="verdict-btn">
+
+                FAKE
+
+            </button>
+
+            <button id="submitVerdictBtn"
+                    class="menu-btn primary">
+
+                SUBMIT VERDICT
+
+            </button>
+
+        </div>
+
+        </div>
+
+</section>
+
+<!-- ========================================= -->
+<!-- INVESTIGATION REPORT -->
+<!-- ========================================= -->
+
+<section id="investigation-report-page" class="screen">
+
+    <div class="report-container">
+
+        <div class="report-card">
+
+            <h1>Investigation Report</h1>
+
+            <p class="case-title">
+                CASE 01: The Candidate Speech
+            </p>
+
+            <p class="case-status">
+                <i class="fa-solid fa-circle-check"></i>
+                Status: Complete
+            </p>
+
+            <div class="report-verdicts">
+
+                <div class="verdict-box">
+
+                    <h3>YOUR FINDING</h3>
+
+                    <span id="playerFinding">
+                        Fake
+                    </span>
+
+                </div>
+
+                <div class="verdict-box">
+
+                    <h3>CASE CONCLUSION</h3>
+
+                    <span id="caseConclusion">
+                        Fake
+                    </span>
+
+                </div>
+
+            </div>
+
+           <div class="analysis-section">
+
+    <div class="analysis-left">
+
+        <h3>FORENSIC ANALYSIS</h3>
+
+        <ul id="analysisIndicators">
+
+        </ul>
+
+    </div>
+
+    <div class="analysis-right" id="analysisDescriptions">
+
+    </div>
+
+</div>
+
+<div
+    id="analysisSummary"
+    class="analysis-summary">
+
+</div>
+
+
+            <button
+                id="reportNextBtn"
+                class="menu-btn primary">
+
+                NEXT
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ========================================= -->
+<!-- INVESTIGATOR'S NOTE -->
+<!-- ========================================= -->
+
+<section id="investigator-note-page" class="screen">
+
+<div class="note-card">
+
+    <h1>Investigator's Note</h1>
+
+    <div class="note-section">
+
+        <h2>Skill Learned</h2>
+
+        <p id="skillLearned">Detecting Lip Synchronization Issues</p>
+
+    </div>
+
+    <div class="note-section">
+
+        <h2>Investigator's Analysis</h2>
+
+        <p id="investigatorNote">Deepfake videos often reveal multiple inconsistencies rather than one obvious flaw. Always inspect several indicators before making your conclusion.</p>
+
+    </div>
+
+    <button
+        id="noteNextBtn"
+        class="menu-btn primary">
+
+        CONTINUE
+
+    </button>
+
+</div>
+
+</section>
+
+<!-- ========================================= -->
+<!-- MISSION REWARD -->
+<!-- ========================================= -->
+       <section id="mission-reward-page" class="screen"> 
+
+        <div class="reward-card">
+
+            <h1>MISSION COMPLETE</h1>
+
+            <div class="reward-item">
+                        Reward XP
+                <h2 id="rewardXP"></h2>
+
+                </div>
+
+        <div class="reward-item">
+                    Reward Accuracy
+            <h2 id="rewardAccuracy"></h2>
+
+        </div>
+
+            <div class="reward-item">
+
+                    Reward Badge Progress
+
+                <h2 id="rewardBadge"></h2>
+
+            </div>
+
+            <button
+                id="returnDashboardBtn"
+                class="menu-btn primary">
+
+                RETURN TO MISSION CONTROL
+
+                </button>
+
+            </div>
+
+</section>
+
+
+    <!-- ======================================================
+                        AUDIO
+    ======================================================= -->
+
+    <audio id="hoverSound"></audio>
+
+    <audio id="clickSound"></audio>
+
+    <audio id="successSound"></audio>
+
+    <audio id="badgeSound"></audio>
+
+    <!-- ======================================================
+                        JAVASCRIPT
+    ======================================================= -->
+
+    <script src="js/data.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/audio.js"></script>
+    <script src="js/app.js"></script>
+
+</body>
+
+</html>

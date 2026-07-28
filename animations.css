@@ -1,0 +1,436 @@
+/* ==========================================================
+   DEEPFAKE VS. REAL
+   animations.css
+========================================================== */
+
+
+/* ==========================================
+   HERO IMAGE FLOAT
+========================================== */
+
+.hero-image img{
+
+    animation: aiPulse 6s ease-in-out infinite;
+
+    transform-origin:center center;
+
+}
+
+@keyframes aiPulse{
+
+    0%{
+
+        transform:scale(1);
+
+        filter:
+            drop-shadow(0 0 30px rgba(2,208,228,.25));
+
+    }
+
+    50%{
+
+        transform:scale(1.035);
+
+        filter:
+            drop-shadow(0 0 55px rgba(2,208,228,.45))
+            drop-shadow(0 0 90px rgba(255,29,192,.20));
+
+    }
+
+    100%{
+
+        transform:scale(1);
+
+        filter:
+            drop-shadow(0 0 30px rgba(2,208,228,.25));
+
+    }
+
+}
+
+
+/* ==========================================
+   TITLE GLOW
+========================================== */
+
+.game-title{
+
+    animation:titleGlow 3s ease-in-out infinite;
+
+}
+
+@keyframes titleGlow{
+
+    0%{
+
+        text-shadow:
+
+        0 0 8px rgba(255,255,255,.2);
+
+    }
+
+    50%{
+
+        text-shadow:
+
+        0 0 40px rgba(2,208,228,.55),
+
+        0 0 50px rgba(255,29,192,.35);
+
+    }
+
+    100%{
+
+        text-shadow:
+
+        0 0 8px rgba(255,255,255,.2);
+
+    }
+
+}
+
+
+/* ==========================================
+   GLITCH EFFECT
+========================================== */
+
+.glitch{
+
+    position:relative;
+
+}
+
+.glitch::before,
+.glitch::after{
+
+    content:attr(data-text);
+
+    position:absolute;
+
+    inset:0;
+
+    pointer-events:none;
+
+    opacity:0;
+
+}
+
+.glitch::before{
+
+    color:#02D0E4;
+
+    transform:translateX(3px);
+
+}
+
+.glitch::after{
+
+    color:#FF1DC0;
+
+    transform:translateX(-3px);
+
+}
+
+.glitch:hover::before{
+
+    animation:glitchLeft .35s;
+
+}
+
+.glitch:hover::after{
+
+    animation:glitchRight .35s;
+
+}
+
+@keyframes glitchLeft{
+
+    0%{
+
+        opacity:0;
+
+    }
+
+    20%{
+
+        opacity:.8;
+
+    }
+
+    100%{
+
+        opacity:0;
+
+    }
+
+}
+
+@keyframes glitchRight{
+
+    0%{
+
+        opacity:0;
+
+    }
+
+    20%{
+
+        opacity:.8;
+
+    }
+
+    100%{
+
+        opacity:0;
+
+    }
+
+}
+
+
+/* ==========================================
+   BUTTON GLOW
+========================================== */
+
+.menu-btn{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.menu-btn::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-120%;
+
+    width:60%;
+
+    height:100%;
+
+    background:
+
+    linear-gradient(
+
+        90deg,
+
+        transparent,
+
+        rgba(255,255,255,.35),
+
+        transparent
+
+    );
+
+    transition:.6s;
+
+}
+
+.menu-btn:hover::before{
+
+    left:130%;
+
+}
+
+
+/* ==========================================
+   BUTTON PRESS
+========================================== */
+
+.menu-btn:active{
+
+    transform:scale(.96);
+
+}
+
+
+/* ==========================================
+   BACKGROUND GLOW
+========================================== */
+
+.glow-one{
+
+    animation:glowPink 10s ease-in-out infinite;
+
+}
+
+.glow-two{
+
+    animation:glowBlue 12s ease-in-out infinite;
+
+}
+
+@keyframes glowPink{
+
+    0%{
+
+        transform:translate(0,0);
+
+    }
+
+    50%{
+
+        transform:translate(60px,40px);
+
+    }
+
+    100%{
+
+        transform:translate(0,0);
+
+    }
+
+}
+
+@keyframes glowBlue{
+
+    0%{
+
+        transform:translate(0,0);
+
+    }
+
+    50%{
+
+        transform:translate(-70px,-40px);
+
+    }
+
+    100%{
+
+        transform:translate(0,0);
+
+    }
+
+}
+
+
+/* ==========================================
+   GRID
+========================================== */
+
+.grid{
+
+    animation:gridMove 20s linear infinite;
+
+}
+
+@keyframes gridMove{
+
+    from{
+
+        background-position:0 0;
+
+    }
+
+    to{
+
+        background-position:70px 70px;
+
+    }
+
+}
+
+
+/* ==========================================
+   SCANLINES
+========================================== */
+
+.scanlines{
+
+    animation:scanlineMove 8s linear infinite;
+
+}
+
+@keyframes scanlineMove{
+
+    from{
+
+        transform:translateY(0);
+
+    }
+
+    to{
+
+        transform:translateY(8px);
+
+    }
+
+}
+
+
+/* ==========================================
+   PAGE FADE
+========================================== */
+
+.screen{
+
+    animation:fadeIn .7s ease;
+
+}
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(15px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ==========================================
+   ACCENT PULSE
+========================================== */
+
+.accent{
+
+    animation:accentPulse 4s ease-in-out infinite;
+
+}
+
+@keyframes accentPulse{
+
+    0%{
+
+        opacity:.45;
+
+        box-shadow:0 0 15px rgba(2,208,228,.3);
+
+    }
+
+    50%{
+
+        opacity:1;
+
+        box-shadow:
+            0 0 35px rgba(2,208,228,.8),
+            0 0 60px rgba(255,29,192,.3);
+
+    }
+
+    100%{
+
+        opacity:.45;
+
+        box-shadow:0 0 15px rgba(2,208,228,.3);
+
+    }
+
+}
